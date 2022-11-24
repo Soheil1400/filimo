@@ -15,7 +15,7 @@ const DropMenu = ({title, data}: DropMenuPropsType) => {
     const [display, setDisplay] = useState<boolean>(false)
 
     return(
-        <Grid display={'flex'} item alignItems={'center'} height={'100%'} position={'relative'}
+        <Grid width={100} display={'flex'} item alignItems={'center'} height={'100%'} position={'relative'}
               onMouseEnter={() => setDisplay(true)} onMouseLeave={() => setDisplay(false)}>
             <Grid display={'flex'}
                   sx={{cursor: 'pointer', color: 'common.white', '&:hover': {color: '#f9ad03'}}}>
@@ -25,7 +25,7 @@ const DropMenu = ({title, data}: DropMenuPropsType) => {
                 <KeyboardArrowDownRoundedIcon/>
             </Grid>
             <Grid width={250} height={"auto"} bgcolor={'common.black'} display={display ? 'flex' : 'none'}
-                  position={'absolute'} top={40} right={0} borderRadius={2} color={'common.white'}
+                  position={'absolute'} top={40} right={0} borderRadius={2} color={'common.white'} zIndex={99}
                   onMouseEnter={() => setDisplay(true)} onMouseLeave={() => setDisplay(false)}>
                 <Grid container p={1}>
                     {data.map( m => (
